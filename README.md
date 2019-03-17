@@ -11,5 +11,7 @@ Things you may want to cover:
 
 * Sqlight3
 
-* run rake db:seed if need populate db 
+* run "rake db:seed" if need populate db 
 
+created by Andriy Kondzolko
+267-945-1902
