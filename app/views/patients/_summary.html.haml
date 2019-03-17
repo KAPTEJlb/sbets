@@ -1,0 +1,6 @@
+%p
+  This #{patient.age} years old #{patient.gender} was admitted to #{patient.facility_name} on #{patient.admission.date} at #{patient.admission.time} due to #{patient.admission.diagnoses_to_s}. The observed symptoms on admission were #{patient.admission.symptoms_to_s}. #{patient.admission.observations_to_s}.
+%p
+  Upon asking about known allergies, the patient disclosed #{patient.allergies_to_s}. Upon asking about chronic conditions, the patient disclosed #{patient.chronic_conditions_to_s}. The patient was administered with #{patient.medications_to_s}.
+%p
+  The staff performed #{patient.diagnostic_procedures_to_s}, revealing #{patient.diagnoses_to_s}. Our team proceeded to #{patient.treatments_to_s}.

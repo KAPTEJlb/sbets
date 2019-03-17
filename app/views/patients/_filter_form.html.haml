@@ -1,0 +1,13 @@
+= search_form_for @q, url: patients_path, html: {class: 'form-inline'} do |f|
+  .form-group
+    = f.label :facility_id_eq, 'Facility'
+    = f.collection_select :facility_id_eq, Facility.all, :id, :name, {include_blank: true}, {class: 'form-control m-l-xs'}
+    = f.label :first_name_or_last_name_in, 'Name'
+    = f.search_field :first_name_or_last_name_in, class: 'form-control m-l-xs'
+    = f.label :admission_diagnoses_description_start, 'Diagnoses'
+    = f.search_field :admission_diagnoses_description_start
+    = f.label :admission_symptoms_description_start, 'Symptoms'
+    = f.search_field :admission_symptoms_description_start
+  = f.submit class: 'btn btn-primary m-l-xs'
+  .form-group
+    = link_to 'Clear Filters', patients_path, class: 'btn btn-sm btn-link'

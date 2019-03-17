@@ -1,0 +1,23 @@
+.row
+  .col-sm-12
+    %h1 Patients list
+    = render partial: 'patients/filter_form'
+    - if @resources.present?
+      %table.table.table-striped
+        %thead
+          %th Full name
+          %th Gender
+          %th Diagnoses
+          %th Symptoms
+          %th Facility
+        %tbody
+          - @resources.each do |resource|
+            %tr
+              %td= link_to resource.full_name, patient_path(resource)
+              %td= resource.gender
+              %td= resource.admission.diagnoses_to_s
+              %td= resource.admission.symptoms_to_s
+              %td= resource.facility_name
+      = pagy_bootstrap_nav(@pagy).html_safe
+    - else
+      Patients list is empty!

@@ -1,0 +1,43 @@
+.row
+  .col-sm-12
+    %h1.hidden-print= @resource.full_name
+    %table.table.table-bordered.table-condensed
+      %thead
+        %th{:colspan => "5"} Emergency Transfer Summary (Form 34L-D)
+      %tbody
+        %tr
+          %td{:colspan => "5"}
+            %strong Transferring Facility
+        %tr
+          %td
+            .m-b-xs
+              %strong Name
+            = @resource.facility_name
+          %td{:colspan => "4"}
+        %tr
+          %td{:colspan => "5"}
+            %strong Parient Information
+        %tr
+          %td
+            .m-b-xs
+              %strong First Name
+            = @resource.first_name
+          %td
+            .m-b-xs
+              %strong Middle Name
+            = @resource.middle_name
+          %td
+            .m-b-xs
+              %strong Last Name
+            = @resource.last_name
+          %td
+            .m-b-xs
+              %strong Medical Record (MR)
+            = @resource.mr
+          %td
+        %tr
+          %td{:colspan => "5"}
+            .m-b-xs
+              %strong Summary
+            = render partial: 'summary', locals: {patient: @resource}
+    = link_to "Print", '#', class: "btn btn-primary hidden-print", onclick: 'window.print();return false;'
