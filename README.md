@@ -13,5 +13,9 @@ Things you may want to cover:
 
 * run "rake db:seed" if need populate db 
 
+Project online on Heroku server
+
+https://sbets.herokuapp.com/
+
 created by Andriy Kondzolko
 267-945-1902
